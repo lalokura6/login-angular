@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    }
+
+    

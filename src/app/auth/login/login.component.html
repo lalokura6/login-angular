@@ -1,0 +1,60 @@
+<div class="container-form"> 
+  <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido</h2>
+                <p>¿No tienes una cuenta? <br><a routerLink="/register">
+                <!-- <button (click)="goToRegister()">Registrarse</button> -->
+                <input type="button" value="Regístrate" id="sign-up"></a>  </p>
+            </div>
+  </div>
+
+<div class="form-information">
+  <div class="form-information-childs">
+      <h2>Iniciar Sesión</h2>
+        <div class="icons">
+           <i class='bx bxl-google'></i>
+           <i class='bx bxl-github'></i>
+           <i class='bx bxl-linkedin' ></i>
+        </div>
+        
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form form-login">
+    <div class="form-group">
+      <div>
+        <label>
+          <!-- <i class='bx bx-envelope' ></i> -->
+          <input type="email" id="email" formControlName="email" placeholder="Ingresa tu email">
+        </label>
+      </div>
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">
+        Por favor ingresa un correo válido
+      </div>
+    </div>
+
+    <div class="form-group">
+      
+    <div>
+      <label>
+        <i class='bx bx-lock-alt' ></i>
+        <input type="password" id="password" formControlName="password" placeholder="Ingresa tu contraseña">
+      </label>
+    </div>
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+        La contraseña debe tener al menos 8 caracteres
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message server-error">
+      {{ errorMessage }}
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid" class="auth-button">Iniciar Sesión</button>
+  </form>
+
+  <!-- <div class="auth-footer">
+    <p>¿No tienes una cuenta? <a routerLink="/register">Regístrate</a></p>
+    
+  </div> -->
+</div>
+
+</div>
+</div>
